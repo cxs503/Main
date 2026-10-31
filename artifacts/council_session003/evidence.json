@@ -1,0 +1,230 @@
+{
+  "generated_at": "2026-10-31T03:50:09+0000",
+  "sources": {
+    "perf_baseline_m397": {
+      "path": "/root/tp-agent/work/m397/artifacts/sdaa_perf_baseline.json",
+      "sha256": "f33b582aa2c975fd7420cffc5ec0879c582255bc7ba72fb8218910f0f0165288"
+    },
+    "cross_card_3card_m621": {
+      "path": "/root/tp-agent/work/m621/artifacts/cross_card_3card.json",
+      "sha256": "4c1754ab45db4c4cf0bc93c8fd637b4f99cd3cdc02ae43ce1eb0dec5c894e397"
+    },
+    "cross_card_4card_m621": {
+      "path": "/root/tp-agent/work/m621/artifacts/cross_card_4card.json",
+      "sha256": "876bbc6d40902cd556df2324dca6ad70f5c6deaf02a3cb7ec5fd08aafa0e21d1"
+    },
+    "matmul_bench_m621": {
+      "path": "/root/tp-agent/work/m621/artifacts/bench.json",
+      "sha256": "501192599f94e6cebd4fb5ef0cfb60aae93106e6a5ff1e41a2291ffb65ba6029"
+    },
+    "hertz_m404": {
+      "path": "/root/tp-agent/work/m404/artifacts/dem_fem_hertz_cpu.json",
+      "sha256": "44581899b49e228ab77eecef04120fe1ec2aa32bf17b9716a9f41bacb4078180"
+    },
+    "dambreak_m407": {
+      "path": "/root/tp-agent/work/m407/artifacts/sdaa_dambreak3d.json",
+      "sha256": "5a287cf88e4a30246331788364b4fbb3158558841dca260c61ee577b5500a8c5"
+    },
+    "live_probe": {
+      "path": "artifacts/council_session003/live_matmul_probe_card25.json",
+      "sha256": "9941951948002d7ce2b15f5692875d50b5f400d4b56fa4dabe921cf0038b9aa7"
+    }
+  },
+  "perf": {
+    "case": "cavity_3d_full",
+    "wall_s": [
+      140.403,
+      198.7826,
+      217.5288,
+      351.5806,
+      364.6723
+    ],
+    "raw_mean_cv_pct": 38.81,
+    "cv_estimator": "artifact uses sample std (n-1)=98.8078/mean=254.5935 -> 38.81%; population std would give 34.71% (recorded in cv_pct_population)",
+    "cv_pct_population": 34.71,
+    "median_wall_s": 217.5288,
+    "monotone_increasing": true,
+    "last_over_first": 2.597,
+    "mlups": [
+      9.3354,
+      6.5937,
+      6.0255,
+      3.7281,
+      3.5942
+    ],
+    "verdict_in_artifact": "cv_pass=False"
+  },
+  "microbench_m621": {
+    "device": "/dev/tcaicard4",
+    "mean_ms": 6.943787783384323,
+    "cv_pct": 1.3433021911996423,
+    "n_iter": 100
+  },
+  "live_probe": {
+    "device_card": "tcaicard25 (SDAA_VISIBLE_DEVICES=25)",
+    "n": 200,
+    "raw_mean_ms": 7.574,
+    "raw_median_ms": 7.266,
+    "raw_mean_cv_pct": 11.31,
+    "min_ms": 6.948,
+    "max_ms": 12.29,
+    "block_medians_ms": [
+      7.466,
+      7.223,
+      7.239,
+      7.186
+    ],
+    "block_median_cv_pct": 1.51,
+    "cv_estimator": "population std (n), applied identically to raw series and block medians",
+    "spikes_gt_2x_median": 0
+  },
+  "cross_card": {
+    "single_card_mean_step_ms_3visible": 15.748284988105297,
+    "single_card_mean_step_ms_4visible": 16.714032378047705,
+    "delta_pct": 6.13,
+    "field_sha256_identical_3_vs_4": true
+  },
+  "accuracy_debt": {
+    "hertz_exponent": 1.41083,
+    "hertz_exponent_target": 1.5,
+    "hertz_exponent_tol": 0.05,
+    "hertz_stiffness_err_pct": 44.0948,
+    "hertz_stiffness_target_pct": 3.0,
+    "hertz_energy_drift_pct": 58.6116,
+    "hertz_energy_target_pct": 1.0,
+    "hertz_mesh_change_pct": 8.4345,
+    "hertz_mesh_target_pct": 5.0,
+    "dambreak_drift_per_1e4_pct": 4.475911458333334,
+    "dambreak_target_per_1e4_pct": 1.0,
+    "dambreak_status": "HONEST_FAIL"
+  },
+  "lib_matrix": [
+    {
+      "lib": "TensorBEM",
+      "py_files": 75,
+      "loc": 18219,
+      "torch_files": 0,
+      "numpy_files": 67,
+      "sdaa_files": 0,
+      "cpu_native_files": 0,
+      "benchmark_entries": 0,
+      "torch_file_ratio": 0.0,
+      "compute_backend": "numpy-only"
+    },
+    {
+      "lib": "TensorCAD",
+      "py_files": 58,
+      "loc": 20986,
+      "torch_files": 5,
+      "numpy_files": 12,
+      "sdaa_files": 0,
+      "cpu_native_files": 0,
+      "benchmark_entries": 0,
+      "torch_file_ratio": 0.0862,
+      "compute_backend": "torch-native"
+    },
+    {
+      "lib": "TensorDEM",
+      "py_files": 115,
+      "loc": 15893,
+      "torch_files": 72,
+      "numpy_files": 0,
+      "sdaa_files": 0,
+      "cpu_native_files": 0,
+      "benchmark_entries": 4,
+      "torch_file_ratio": 0.6261,
+      "compute_backend": "torch-native"
+    },
+    {
+      "lib": "TensorDG",
+      "py_files": 39,
+      "loc": 4684,
+      "torch_files": 26,
+      "numpy_files": 24,
+      "sdaa_files": 0,
+      "cpu_native_files": 3,
+      "benchmark_entries": 18,
+      "torch_file_ratio": 0.6667,
+      "compute_backend": "torch-native"
+    },
+    {
+      "lib": "TensorFEM",
+      "py_files": 492,
+      "loc": 46448,
+      "torch_files": 294,
+      "numpy_files": 13,
+      "sdaa_files": 0,
+      "cpu_native_files": 1,
+      "benchmark_entries": 3,
+      "torch_file_ratio": 0.5976,
+      "compute_backend": "torch-native"
+    },
+    {
+      "lib": "TensorFVM",
+      "py_files": 437,
+      "loc": 45576,
+      "torch_files": 112,
+      "numpy_files": 343,
+      "sdaa_files": 0,
+      "cpu_native_files": 31,
+      "benchmark_entries": 0,
+      "torch_file_ratio": 0.2563,
+      "compute_backend": "torch-native"
+    },
+    {
+      "lib": "TensorLBM",
+      "py_files": 1965,
+      "loc": 595150,
+      "torch_files": 1369,
+      "numpy_files": 445,
+      "sdaa_files": 349,
+      "cpu_native_files": 3,
+      "benchmark_entries": 35,
+      "torch_file_ratio": 0.6967,
+      "compute_backend": "torch-native"
+    },
+    {
+      "lib": "TensorPhysics",
+      "py_files": 102,
+      "loc": 19064,
+      "torch_files": 12,
+      "numpy_files": 25,
+      "sdaa_files": 0,
+      "cpu_native_files": 0,
+      "benchmark_entries": 1,
+      "torch_file_ratio": 0.1176,
+      "compute_backend": "torch-native"
+    },
+    {
+      "lib": "TensorPlatform",
+      "py_files": 4559,
+      "loc": 1718001,
+      "torch_files": 30,
+      "numpy_files": 578,
+      "sdaa_files": 12,
+      "cpu_native_files": 110,
+      "benchmark_entries": 0,
+      "torch_file_ratio": 0.0066,
+      "compute_backend": "cpu-native-dominant(numpy/scipy/numba)"
+    },
+    {
+      "lib": "TensorSPH",
+      "py_files": 23,
+      "loc": 5266,
+      "torch_files": 18,
+      "numpy_files": 1,
+      "sdaa_files": 0,
+      "cpu_native_files": 0,
+      "benchmark_entries": 6,
+      "torch_file_ratio": 0.7826,
+      "compute_backend": "torch-native"
+    }
+  ],
+  "teco_smi": {
+    "binary": "/opt/tecoai/bin/teco-smi",
+    "version": "TECO-SMI: 1.15.0",
+    "index_entries": 8,
+    "dev_nodes": 32,
+    "busy_index": "0:28%"
+  }
+}
